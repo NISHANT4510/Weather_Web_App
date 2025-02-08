@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-gradient-to-b from-blue-500 to-blue-300 flex items-center justify-center min-h-screen p-4 sm:p-6">
+
+    <div class="w-full max-w-6xl bg-white bg-opacity-80 backdrop-blur-md shadow-2xl rounded-3xl p-6 sm:p-8 border border-gray-300">
+        <!-- Header -->
+        <h2 class="text-4xl font-bold text-center text-gray-800 py-4 flex items-center justify-center gap-2">
+            🌤️ <span class="tracking-wide">Weather Dashboard</span>
+        </h2>
+
+        <!-- Search Bar -->
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg flex flex-col sm:flex-row gap-4 justify-between">
+            <input id="cityInput" autocomplete="off"
+            type="text" placeholder="Search City..." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md">
+            
+            <button id="searchbtn" class="bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 shadow-md">
+                🔍 Search
+            </button>
+            
+            <button id="current" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 shadow-md">
+                📍 Current Location
+            </button>
+        </div>
+
+        <!-- Dropdown for Recent Searches (Initially Hidden) -->
+        <div id="recentContainer" class="relative hidden mt-4">
+            <button class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded-lg w-full text-left font-semibold transition duration-300" id="recentBtn">
+                ⬇️ Recent Cities
+            </button>
+            <ul id="recentList" class="absolute bg-white border border-gray-300 w-full rounded-lg shadow-lg hidden overflow-hidden">
+            </ul>
+        </div>
+
+        <!-- Current Weather Section -->
+        <div class="mt-6 text-center text-2xl font-bold text-gray-900" id="city_name"></div>
+
+        <!-- Two Rows of Two Equal-Width Cards -->
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6" id="current_weather"></div>
+
+        <!-- Hourly Forecast -->
+        <div class="mt-8">
+            <h4 class="text-2xl font-semibold text-center text-gray-900">⏳ Hourly Forecast</h4>
+            <div class="flex overflow-x-auto space-x-4 p-4 scrollbar-hide" id="hourly_forecast"></div>
+        </div>
+
+        <!-- 5-Day Forecast -->
+        <div class="mt-8">
+            <h4 class="text-2xl font-semibold text-center text-gray-900">📅 5-Day Forecast</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6 mt-4 text-center" id="weather_cards"></div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
