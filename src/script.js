@@ -1,3 +1,6 @@
+// This script handles fetching weather data, updating UI, and managing recent searches.
+
+//Selecting DOM Elements
 let inputBox = document.getElementById("cityInput");
 let searchBtn = document.getElementById("searchbtn");
 let cityNameDiv = document.getElementById("city_name");
@@ -5,12 +8,15 @@ let weatherCurrentDiv = document.getElementById("current_weather");
 let weatherCardsDiv = document.getElementById("weather_cards");
 let hourlyForecastDiv = document.getElementById("hourly_forecast");
 
+//Elements for Recent Search Dropdown
+
 const recentContainer = document.getElementById("recentContainer");
 const recentList = document.getElementById("recentList");
 const currentLocationBtn = document.getElementById("current");
 
-
+// API Key for OpenWeather API
 const API_KEY = "3aeed3c94f66a7983b46e538309f5ff1";
+
 // Function to Get Weather Using Current Location
 const getWeatherByLocation = () => {
     if (navigator.geolocation) {
